@@ -24,6 +24,7 @@ NOTFOUND_MESSAGE = "Not Found"
 
 BIRTHDAY_FORM = """<html>
 <body>
+<h1>Tarot Birth Card</h1>
 <form method="post" action="/birthday">
 <label for="year">Year:</label>
 <input type="number" name="year"><br>
