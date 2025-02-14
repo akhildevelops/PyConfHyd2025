@@ -17,4 +17,4 @@ jobs:
           GZIP=9 tar -cvf tarot.tar.gz tarot/
       - name: Deploy to target server
         run: |
-          curl -X POST ${{ secrets.hostname }} -F 'files=@tarot.tar.gz' -u ${{ secrets.user_password }}
+          curl -X POST ${{ secrets.hostname }} -F 'files=@tarot.tar.gz' -u ${{ secrets.user_password }} --http1.1
