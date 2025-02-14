@@ -1,0 +1,20 @@
+name: tarot
+on:
+  push:
+    branches:
+      - main
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: remote
+    steps:
+      - uses: actions/checkout@v4
+      - name: Make a release package
+        run: |
+          mkdir tarot &&\
+          cp -r resources/ tarot/ &&\
+          cp server.py tarot/ &&\
+          GZIP=9 tar -cvf tarot.tar.gz tarot/
+      - name: Deploy to target server
+        run: |
+          curl -X POST ${{ secrets.hostname }} -F 'files=@tarot.tar.gz' -u ${{ secrets.user_password }}
