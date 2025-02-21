@@ -28,10 +28,6 @@ BIRTHDAY_FORM = """<html>
 <form method="post" action="/birthday">
 <label for="year">Year:</label>
 <input type="number" name="year"><br>
-<label for="month">Month:</label>
-<input type="number" name="month"><br>
-<label for="day">Day:</label>
-<input type="number" name="day"><br>
 <input type="submit" value="submit">
 </form>
 </body>
